@@ -56,3 +56,10 @@ async function bootstrap() {
 
 bootstrap();
 ```
+
+### File Naming Conventions
+
+- One class per file (some exceptions)
+- Class names should include the kind of thing we are creating
+- Name of class and name of file should always match up
+- Filename template: name.type_of_thing.ts
