@@ -63,3 +63,11 @@ bootstrap();
 - Class names should include the kind of thing we are creating
 - Name of class and name of file should always match up
 - Filename template: name.type_of_thing.ts
+
+### Messages Project
+
+- `npm i -g @nestjs/cli`
+- `nest new messages`
+- remove all app.*.ts
+- `nest generate module messages`
+- `nest generate controller messages/messages --flat`
