@@ -1,0 +1,47 @@
+Arguments: 
+  /Users/szy0syz/.nvm/versions/node/v16.4.1/bin/node /Users/szy0syz/.nvm/versions/node/v16.4.1/bin/yarn add @nextjs/common@7.6.17 @nextjs/core/7.6.17 @nestjs/platform-express@7.6.17 reflect-metadata@0.1.13 typescript@4.3.2
+
+PATH: 
+  /Users/szy0syz/.nvm/versions/node/v16.4.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/szy0syz/.nvm/versions/node/v16.4.1/bin:/Users/szy0syz/flutter/bin:/Users/szy0syz/git/hi-nestjs/flutter/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  16.4.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.npmjs.org/@nextjs%2fcommon: Not found
+      at Request.params.callback [as _callback] (/Users/szy0syz/.nvm/versions/node/v16.4.1/lib/node_modules/yarn/lib/cli.js:66988:18)
+      at Request.self.callback (/Users/szy0syz/.nvm/versions/node/v16.4.1/lib/node_modules/yarn/lib/cli.js:140662:22)
+      at Request.emit (node:events:394:28)
+      at Request.<anonymous> (/Users/szy0syz/.nvm/versions/node/v16.4.1/lib/node_modules/yarn/lib/cli.js:141634:10)
+      at Request.emit (node:events:394:28)
+      at IncomingMessage.<anonymous> (/Users/szy0syz/.nvm/versions/node/v16.4.1/lib/node_modules/yarn/lib/cli.js:141556:12)
+      at Object.onceWrapper (node:events:513:28)
+      at IncomingMessage.emit (node:events:406:35)
+      at endReadableNT (node:internal/streams/readable:1329:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "hi-nestjs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
