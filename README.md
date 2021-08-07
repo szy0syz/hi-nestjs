@@ -71,3 +71,10 @@ bootstrap();
 - remove all app.*.ts
 - `nest generate module messages`
 - `nest generate controller messages/messages --flat`
+- `yarn add class-validator class-transformer`
+
+### Validating Request Data with Pipes
+
+> 通过管道验证请求数据
+
+![001](/images/001.png)
