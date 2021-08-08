@@ -202,3 +202,25 @@ Creating an Entity
 ![022](/images/022.png)
 
 - `yarn add class-validator class-transformer`
+
+![023](/images/023.png)
+
+![024](/images/024.png)
+
+```ts
+@Injectable()
+export class UsersService {
+  constructor(@InjectRepository(User) private repo: Repository<User>) {}
+
+  create(email: string, password: string) {
+    const user = this.repo.create({ email, password });
+
+    // return this.repo.save({ email, password }); // -> 不会触发钩子函数
+    return this.repo.save(user); // -> 会触发 🪝 钩子函数
+  }
+}
+```
+
+![025](/images/025.png)
+
+为了统一处理错误，请一致使用 `@nestjs/common` 下的异常错误类s
