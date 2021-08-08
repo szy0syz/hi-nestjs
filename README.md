@@ -89,7 +89,7 @@ bootstrap();
 
 ![005](/images/005.png)
 
-### IOC & DI
+IOC & DI
 
 - IOC (Inversion of Control): 其思想是反转资源获取的方向
   - 传统的资源查找方向要求组件向容器发起请求查找资源，作为回应，容器适时的返回资源
@@ -133,3 +133,21 @@ IOC的前生与今世
 - Container will hold onto the created dependency instances and reuse them if needed
   - 容器将会保留所有创建的依赖的实例，并在需要的时候重新使用它们
   - 这个如何证明呢？如下代码所示：
+
+### Modules and Dependency Injection
+
+> 🚀🚀🚀 Quick side project to understand Modules and Dependency Injection
+
+![010](/images/010.png)
+
+![011](/images/011.png)
+
+- `nest new di`
+- `nest g module computer`
+- `nest g module cpu`
+- `nest g module disk`
+- `nest g module power`
+- `nest g service cpu`
+- `nest g service power`
+- `nest g service disk`
+- `nest g controller computer`
