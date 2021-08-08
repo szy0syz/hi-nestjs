@@ -119,3 +119,17 @@ IOC的前生与今世
 ![008](/images/008.png)
 
 - 这个时候的 `Service`，对外依赖只剩下一条线，而且连接的是个接口类，大大降低了耦合度
+
+![009](/images/009.png)
+
+- At startup, register all classes with container
+  - 启动时，容器注册所有的类
+- Container will figure out what each dependency each class has
+  - 容器将会理清楚每个类到底有哪些依赖
+- We then ask the container to create an instance of a class for us
+  - 然后我们要求容器为我们创建一个类的实例
+- Container creates all required dependencies and gives us the instance
+  - 容器会创建所有必须的依赖，并给我们提供实例
+- Container will hold onto the created dependency instances and reuse them if needed
+  - 容器将会保留所有创建的依赖的实例，并在需要的时候重新使用它们
+  - 这个如何证明呢？如下代码所示：
