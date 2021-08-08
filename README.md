@@ -223,4 +223,4 @@ export class UsersService {
 
 ![025](/images/025.png)
 
-为了统一处理错误，请一致使用 `@nestjs/common` 下的异常错误类s
+为了统一处理错误，请一致使用 `@nestjs/common` 下的异常类抛异常。
