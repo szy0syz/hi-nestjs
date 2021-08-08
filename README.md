@@ -187,3 +187,18 @@ Creating an Entity
 - Create an entity file, and create a class in it that lists all the properties that your entity will have
 - Connect the entity to its parent module. This creates a repositiry
 - Connect the entity to the root connection (in app module)
+
+![019](/images/019.png)
+
+![020](/images/020.png)
+
+![021](/images/021.png)
+
+- save()   --> insert() or update()
+- remove() --> delete()
+
+> 太细了，细致！
+
+![022](/images/022.png)
+
+- `yarn add class-validator class-transformer`
