@@ -175,3 +175,15 @@ Used Car Pricing API
 - `nest g controller reports`
 - `nest g service users`
 - `nest g service reports`
+
+![017](/images/017.png)
+
+- `yarn add @nestjs/typeorm typeorm sqlite3`
+
+![018](/images/018.png)
+
+Creating an Entity
+
+- Create an entity file, and create a class in it that lists all the properties that your entity will have
+- Connect the entity to its parent module. This creates a repositiry
+- Connect the entity to the root connection (in app module)
