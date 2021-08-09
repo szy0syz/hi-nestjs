@@ -224,3 +224,28 @@ export class UsersService {
 ![025](/images/025.png)
 
 为了统一处理错误，请一致使用 `@nestjs/common` 下的异常类抛异常。
+
+![026](/images/026.png)
+
+```ts
+class User {
+  @Column()
+  @Exclude()
+  password: string;
+}
+
+// - controller -
+@UseInterceptors(ClassSerializerInterceptor)
+@Get('/:id')
+findUser(@Param('id') id: string) {
+  return this.usersService.findOne(parseInt(id));
+}
+```
+
+#### Cutsom Interceptor
+
+![027](/images/027.png)
+
+![028](/images/028.png)
+
+![029](/images/029.png)
