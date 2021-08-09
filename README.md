@@ -249,3 +249,40 @@ findUser(@Param('id') id: string) {
 ![028](/images/028.png)
 
 ![029](/images/029.png)
+
+### Authentication
+
+![030](/images/030.png)
+
+讨论下用户注册的服务层代码，如何 `Trade Out` 权衡！
+
+![031](/images/031.png)
+
+![032](/images/032.png)
+
+![033](/images/033.png)
+
+![034](/images/034.png)
+
+![035](/images/035.png)
+
+![036](/images/036.png)
+
+```ts
+async signup(email: string, password: string) {
+  // see if email is in use
+  const users = await this.usersService.find(email);
+  if (users.length) throw new BadRequestException('email in use');
+
+  // hash the users password
+  const salt = randomBytes(8).toString('hex');
+  const hash = (await scrypt(password, salt, 32)) as Buffer;
+  const result = salt + '.' + hash.toString('hex');
+
+  // create a new user and save it
+  const user = await this.usersService.create(email, result);
+
+  // return the user
+  return user;
+}
+```

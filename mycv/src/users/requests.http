@@ -3,15 +3,24 @@ Post http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email": "123@123.com",
-  "password": "123123"
+  "email": "111@111.com",
+  "password": "111"
+}
+
+### sign in
+Post http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "111@111.com",
+  "password": "111"
 }
 
 ### Find a particular user with a given ID
 GET http://localhost:3000/auth/8
 
 ### Find all users with a given email
-GET http://localhost:3000/auth?email=123@123.com
+GET http://localhost:3000/auth?email=111@111.com
 
 ### Delete a user with given id
 DELETE  http://localhost:3000/auth/2
