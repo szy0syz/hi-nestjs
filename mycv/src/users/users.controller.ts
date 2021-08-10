@@ -12,6 +12,7 @@ import {
   Patch,
   Query,
   Delete,
+  Session,
   NotFoundException,
 } from '@nestjs/common';
 import { Serialize } from 'src/intercptors/serialize.interceptor';
@@ -58,5 +59,18 @@ export class UsersController {
   @Patch('/:id')
   updateUser(@Param('id') id: string, @Body() body: UpdateUserDto) {
     return this.usersService.update(parseInt(id), body);
+  }
+
+  @Get('/colors/:color')
+  setColor(@Param('color') color: string, @Session() session: any) {
+    console.log('session.color', session.color);
+    session.color = color;
+    return 'ok';
+  }
+
+  @Get('/colors')
+  getColor(@Session() session: any) {
+    console.log('-get color-');
+    return session.color;
   }
 }
