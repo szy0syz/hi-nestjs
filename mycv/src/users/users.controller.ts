@@ -25,15 +25,25 @@ export class UsersController {
     private usersService: UsersService,
   ) {}
 
+  @Get('/whoami')
+  whoAmI(@Session() session: any) {
+    return this.usersService.findOne(session.userId);
+  }
+
   @Post('/signup')
-  createUser(@Body() body: CreateUserDto) {
-    return this.authService.signup(body.email, body.password);
-    // return this.usersService.create(body.email, body.password);
+  async createUser(@Body() body: CreateUserDto, @Session() session: any) {
+    const user = await this.authService.signup(body.email, body.password);
+    session.userId = user;
+
+    return user;
   }
 
   @Post('/signin')
-  signin(@Body() body: CreateUserDto) {
-    return this.authService.signin(body.email, body.password);
+  async signin(@Body() body: CreateUserDto, @Session() session: any) {
+    const user = await this.authService.signin(body.email, body.password);
+    session.userId = user;
+
+    return user;
   }
 
   // @UseInterceptors(ClassSerializerInterceptor)
@@ -61,16 +71,16 @@ export class UsersController {
     return this.usersService.update(parseInt(id), body);
   }
 
+  @Get('/colors1')
+  getColor(@Session() session: any) {
+    console.log('-get color-');
+    return session.color;
+  }
+
   @Get('/colors/:color')
   setColor(@Param('color') color: string, @Session() session: any) {
     console.log('session.color', session.color);
     session.color = color;
     return 'ok';
-  }
-
-  @Get('/colors')
-  getColor(@Session() session: any) {
-    console.log('-get color-');
-    return session.color;
   }
 }

@@ -3,11 +3,11 @@ Post http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email": "111@111.com",
+  "email": "222@222.com",
   "password": "111"
 }
 
-### sign in
+### sign in user-1
 Post http://localhost:3000/auth/signin
 Content-Type: application/json
 
@@ -15,6 +15,19 @@ Content-Type: application/json
   "email": "111@111.com",
   "password": "111"
 }
+
+### sign in user-2
+Post http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "222@222.com",
+  "password": "111"
+}
+
+### get current user
+GET  http://localhost:3000/auth/whoami
+
 
 ### Find a particular user with a given ID
 GET http://localhost:3000/auth/8
@@ -35,7 +48,7 @@ Content-Type: application/json
 
 
 ### Set auth User color
-GET  http://localhost:3000/auth/colors/red
+GET http://localhost:3000/auth/colors/red
 
 ### GET user color
-GET  http://localhost:3000/auth/colors
+GET http://localhost:3000/auth/colors
