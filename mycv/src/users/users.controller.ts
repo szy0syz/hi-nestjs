@@ -1,3 +1,4 @@
+import { AuthGuard } from './../guards/auth.guard';
 import { CurrentUserInterceptor } from './interceptors/current-user.interceptor';
 import { CurrentUser } from './decorators/current-user.decorator';
 import { AuthService } from './auth.service';
@@ -16,7 +17,8 @@ import {
   Delete,
   Session,
   NotFoundException,
-  UseInterceptors
+  UseInterceptors,
+  UseGuards
 } from '@nestjs/common';
 import { Serialize } from 'src/intercptors/serialize.interceptor';
 import { User } from './user.entity';
@@ -36,6 +38,7 @@ export class UsersController {
   // }
 
   @Get('/whoami')
+  @UseGuards(AuthGuard)
   whoAmI(@CurrentUser() user: User) {
     return user;
   }
